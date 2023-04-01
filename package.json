@@ -1,5 +1,6 @@
 {
   "name": "scryfall-types",
+  "description": "TypeScript types and interfaces for the Scryfall API.",
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
