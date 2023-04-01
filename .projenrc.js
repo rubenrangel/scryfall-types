@@ -15,6 +15,11 @@ const project = new typescript.TypeScriptProject({
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
   gitignore: [".idea"],
+  tsconfig: {
+    compilerOptions: {
+      emitDeclarationOnly: true,
+    },
+  },
 });
 
 project.synth();
