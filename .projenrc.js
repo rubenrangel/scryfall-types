@@ -20,6 +20,7 @@ const project = new typescript.TypeScriptProject({
       emitDeclarationOnly: true,
     },
   },
+  entrypoint: "",
 });
 
 project.addPackageIgnore(".gitattributes");
