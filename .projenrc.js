@@ -22,4 +22,10 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
+project.addPackageIgnore(".gitattributes");
+project.addPackageIgnore(".prettierignore");
+project.addPackageIgnore(".prettierrc.json");
+project.addPackageIgnore("CODE_OF_CONDUCT.md");
+project.addPackageIgnore("CONTRIBUTING.md");
+
 project.synth();
