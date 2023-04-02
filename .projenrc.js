@@ -29,4 +29,6 @@ project.addPackageIgnore(".prettierrc.json");
 project.addPackageIgnore("CODE_OF_CONDUCT.md");
 project.addPackageIgnore("CONTRIBUTING.md");
 
+project.package.addField("types", "./lib/index.d.ts");
+
 project.synth();
