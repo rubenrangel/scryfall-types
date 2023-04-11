@@ -21,3 +21,8 @@ dist
 /.projenrc.js
 tsconfig.tsbuildinfo
 /.eslintrc.json
+.gitattributes
+.prettierignore
+.prettierrc.json
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
