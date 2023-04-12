@@ -2,6 +2,18 @@ const { typescript } = require("projen");
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: "main",
   name: "scryfall-types",
+  description: "TypeScript types and interfaces for the Scryfall API.",
+  keywords: [
+    "scryfall",
+    "api",
+    "typescript",
+    "types",
+    "interfaces",
+    "mtg",
+    "magic",
+    "gathering",
+  ],
+  releaseToNpm: true,
   prettier: true,
   githubOptions: {
     pullRequestLintOptions: {
@@ -10,10 +22,6 @@ const project = new typescript.TypeScriptProject({
       },
     },
   },
-  // deps: [],                /* Runtime dependencies of this module. */
-  description: "TypeScript types and interfaces for the Scryfall API.",
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
   gitignore: [".idea"],
   tsconfig: {
     compilerOptions: {
