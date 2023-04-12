@@ -41,6 +41,16 @@
     "ts-jest": "^29.0.5",
     "typescript": "^5.0.3"
   },
+  "keywords": [
+    "api",
+    "gathering",
+    "interfaces",
+    "magic",
+    "mtg",
+    "scryfall",
+    "types",
+    "typescript"
+  ],
   "license": "Apache-2.0",
   "version": "0.0.0",
   "jest": {
