@@ -1,5 +1,6 @@
 export * from "./IScryfallBulkData";
 export * from "./IScryfallCardSymbol";
+export * from "./IScryfallCatalog";
 export * from "./IScryfallColor";
 export * from "./IScryfallError";
 export * from "./IScryfallList";
