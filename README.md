@@ -8,6 +8,7 @@ TypeScript types and interfaces for the [Scryfall API](https://scryfall.com/docs
   - [IScryfallBulkData](./src/IScryfallBulkData.ts)
   - [IScryfallCardFace](./src/IScryfallCardFace.ts)
   - [IScryfallError](./src/IScryfallError.ts)
+  - [IScryfallMigration](./src/IScryfallMigration.ts)
   - [IScryfallRelatedCard](./src/IScryfallRelatedCard.ts)
   - [IScryfallRuling](./src/IScryfallRuling.ts)
   - [IScryfallSet](./src/IScryfallSet.ts)
