@@ -29,6 +29,7 @@ const project = new typescript.TypeScriptProject({
     },
   },
   entrypoint: "",
+  devDeps: ["vitest"],
 });
 
 project.addPackageIgnore(".gitattributes");

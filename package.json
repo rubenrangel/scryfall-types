@@ -39,7 +39,8 @@
     "projen": "^0.72.4",
     "standard-version": "^9",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.1"
   },
   "keywords": [
     "api",
