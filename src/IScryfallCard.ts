@@ -329,7 +329,7 @@ export interface IScryfallCardPrintFields {
    * An object containing daily price information for this card, including
    * `usd`, `usd_foil`, `usd_etched`, `eur`, and `tix` prices, as strings.
    */
-  prices: Record<string, string>;
+  prices: Record<string, string | null>;
 
   /**
    * The localized name printed on this card, if any.
@@ -422,7 +422,7 @@ export interface IScryfallCardPrintFields {
   /**
    * True if this card is a Story Spotlight.
    */
-  story_spotlight: string;
+  story_spotlight: boolean;
 
   /**
    * True if the card is printed without text.

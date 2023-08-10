@@ -14,6 +14,7 @@ const project = new typescript.TypeScriptProject({
     "gathering",
   ],
   releaseToNpm: true,
+  jest: false,
   prettier: true,
   githubOptions: {
     pullRequestLintOptions: {
@@ -28,7 +29,14 @@ const project = new typescript.TypeScriptProject({
       emitDeclarationOnly: true,
     },
   },
+  tsconfigDev: {
+    include: ["vite.config.ts"],
+    compilerOptions: {
+      lib: ["dom", "es2019"],
+    },
+  },
   entrypoint: "",
+  devDeps: ["vitest"],
 });
 
 project.addPackageIgnore(".gitattributes");
@@ -38,5 +46,7 @@ project.addPackageIgnore("CODE_OF_CONDUCT.md");
 project.addPackageIgnore("CONTRIBUTING.md");
 
 project.package.addField("types", "./lib/index.d.ts");
+
+project.testTask.reset("vitest typecheck --run");
 
 project.synth();
