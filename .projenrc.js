@@ -28,6 +28,12 @@ const project = new typescript.TypeScriptProject({
       emitDeclarationOnly: true,
     },
   },
+  tsconfigDev: {
+    include: ["vite.config.ts"],
+    compilerOptions: {
+      lib: ["dom", "es2019"],
+    },
+  },
   entrypoint: "",
   devDeps: ["vitest"],
 });
@@ -39,5 +45,7 @@ project.addPackageIgnore("CODE_OF_CONDUCT.md");
 project.addPackageIgnore("CONTRIBUTING.md");
 
 project.package.addField("types", "./lib/index.d.ts");
+
+project.testTask.reset("vitest typecheck --run");
 
 project.synth();

@@ -26,7 +26,7 @@ export interface IScryfallMigration extends IScryfallObject {
   /**
    * The date this migration was performed.
    */
-  created_at: string;
+  performed_at: string;
 
   /**
    * A computer-readable indicator of the migration strategy.
