@@ -14,6 +14,7 @@ const project = new typescript.TypeScriptProject({
     "gathering",
   ],
   releaseToNpm: true,
+  jest: false,
   prettier: true,
   githubOptions: {
     pullRequestLintOptions: {
