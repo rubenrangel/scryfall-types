@@ -1,6 +1,5 @@
 const { typescript } = require("projen");
 const project = new typescript.TypeScriptProject({
-  projenVersion: "^0.70.0",
   defaultReleaseBranch: "main",
   name: "scryfall-types",
   description: "TypeScript types and interfaces for the Scryfall API.",
@@ -31,13 +30,14 @@ const project = new typescript.TypeScriptProject({
     },
   },
   tsconfigDev: {
-    // include: ["vite.config.ts"],
+    include: ["vite.config.ts"],
     compilerOptions: {
-      // lib: ["dom", "es2019"],
+      lib: ["dom", "es2019"],
     },
   },
   entrypoint: "",
   devDeps: ["vitest"],
+  depsUpgrade: false,
 });
 
 project.addPackageIgnore(".gitattributes");
@@ -49,7 +49,5 @@ project.addPackageIgnore("CONTRIBUTING.md");
 project.addPackageIgnore("coverage");
 
 project.package.addField("types", "./lib/index.d.ts");
-
-// project.testTask.reset("vitest typecheck --run");
 
 project.synth();

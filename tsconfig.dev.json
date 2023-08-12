@@ -8,6 +8,7 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
+      "dom",
       "es2019"
     ],
     "module": "CommonJS",
@@ -29,7 +30,8 @@
   "include": [
     ".projenrc.js",
     "src/**/*.ts",
-    "test/**/*.ts"
+    "test/**/*.ts",
+    "vite.config.ts"
   ],
   "exclude": [
     "node_modules"
