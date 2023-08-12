@@ -47,6 +47,7 @@ const project = new typescript.TypeScriptProject({
   entrypoint: "",
   devDeps: ["vitest", "wrap-ansi"],
   depsUpgrade: false,
+  workflowNodeVersion: "18",
 });
 
 project.addPackageIgnore(".gitattributes");
