@@ -97,7 +97,10 @@ project.github
 project.addPackageIgnore(".gitattributes");
 project.addPackageIgnore(".prettierignore");
 project.addPackageIgnore(".prettierrc.json");
-project.addPackageIgnore(".vite.config.ts");
+project.addPackageIgnore("vite.config.ts");
+project.addPackageIgnore(".yarn");
+project.addPackageIgnore(".yarnrc.yml");
+project.addPackageIgnore("yarn-error.log");
 project.addPackageIgnore("CODE_OF_CONDUCT.md");
 project.addPackageIgnore("CONTRIBUTING.md");
 project.addPackageIgnore("coverage");
