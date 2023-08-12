@@ -104,4 +104,6 @@ project.addPackageIgnore("coverage");
 
 project.package.addField("types", "./lib/index.d.ts");
 
+project.testTask.reset("vitest typecheck --run");
+
 project.synth();
