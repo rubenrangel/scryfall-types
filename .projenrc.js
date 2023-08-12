@@ -23,7 +23,16 @@ const project = new typescript.TypeScriptProject({
       },
     },
   },
-  gitignore: [".idea"],
+  gitignore: [
+    ".idea",
+    ".pnp.*",
+    ".yarn/*",
+    "!.yarn/patches",
+    "!.yarn/plugins",
+    "!.yarn/releases",
+    "!.yarn/sdks",
+    "!.yarn/versions",
+  ],
   tsconfig: {
     compilerOptions: {
       emitDeclarationOnly: true,
