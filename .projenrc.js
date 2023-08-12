@@ -23,7 +23,16 @@ const project = new typescript.TypeScriptProject({
       },
     },
   },
-  gitignore: [".idea"],
+  gitignore: [
+    ".idea",
+    ".pnp.*",
+    ".yarn/*",
+    "!.yarn/patches",
+    "!.yarn/plugins",
+    "!.yarn/releases",
+    "!.yarn/sdks",
+    "!.yarn/versions",
+  ],
   tsconfig: {
     compilerOptions: {
       emitDeclarationOnly: true,
@@ -38,6 +47,25 @@ const project = new typescript.TypeScriptProject({
   entrypoint: "",
   devDeps: ["vitest", "wrap-ansi"],
   depsUpgrade: false,
+  workflowNodeVersion: "18",
+  workflowBootstrapSteps: [
+    {
+      name: "Setup Node.js",
+      uses: "actions/setup-node@v3",
+      with: {
+        "node-version": "18",
+        // cache: "yarn",
+        // "cache-dependency-path": "yarn.lock",
+      },
+    },
+    {
+      run: "corepack enable",
+    },
+    {
+      run: "corepack prepare yarn@stable --activate",
+    },
+  ],
+  buildWorkflow: false,
 });
 
 project.addPackageIgnore(".gitattributes");
