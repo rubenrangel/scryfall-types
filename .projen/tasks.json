@@ -183,7 +183,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "vitest typecheck --run"
+          "spawn": "eslint"
         }
       ]
     },

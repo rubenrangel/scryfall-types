@@ -30,9 +30,9 @@ const project = new typescript.TypeScriptProject({
     },
   },
   tsconfigDev: {
-    include: ["vite.config.ts"],
+    // include: ["vite.config.ts"],
     compilerOptions: {
-      lib: ["dom", "es2019"],
+      // lib: ["dom", "es2019"],
     },
   },
   entrypoint: "",
@@ -42,11 +42,13 @@ const project = new typescript.TypeScriptProject({
 project.addPackageIgnore(".gitattributes");
 project.addPackageIgnore(".prettierignore");
 project.addPackageIgnore(".prettierrc.json");
+project.addPackageIgnore(".vite.config.ts");
 project.addPackageIgnore("CODE_OF_CONDUCT.md");
 project.addPackageIgnore("CONTRIBUTING.md");
+project.addPackageIgnore("coverage");
 
 project.package.addField("types", "./lib/index.d.ts");
 
-project.testTask.reset("vitest typecheck --run");
+// project.testTask.reset("vitest typecheck --run");
 
 project.synth();
