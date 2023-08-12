@@ -32,7 +32,8 @@
     "projen": "^0.70.0",
     "standard-version": "^9",
     "typescript": "^5.1.6",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.1",
+    "wrap-ansi": "*"
   },
   "keywords": [
     "api",

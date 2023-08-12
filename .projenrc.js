@@ -36,7 +36,7 @@ const project = new typescript.TypeScriptProject({
     },
   },
   entrypoint: "",
-  devDeps: ["vitest"],
+  devDeps: ["vitest", "wrap-ansi"],
   depsUpgrade: false,
 });
 
