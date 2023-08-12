@@ -1,6 +1,6 @@
 const { typescript } = require("projen");
 const project = new typescript.TypeScriptProject({
-  projenVersion: "^0.71.0",
+  projenVersion: "^0.70.0",
   defaultReleaseBranch: "main",
   name: "scryfall-types",
   description: "TypeScript types and interfaces for the Scryfall API.",
