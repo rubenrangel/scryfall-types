@@ -1,4 +1,4 @@
-const { typescript } = require("projen");
+const { typescript, JsonPatch } = require("projen");
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: "main",
   name: "scryfall-types",
@@ -64,9 +64,26 @@ const project = new typescript.TypeScriptProject({
     {
       run: "corepack prepare yarn@stable --activate",
     },
+    {
+      name: "Install dependencies",
+      run: "yarn install",
+    },
   ],
-  buildWorkflow: false,
 });
+
+project.github
+  .tryFindWorkflow("build")
+  .file.patch(JsonPatch.remove("/jobs/build/steps/5"));
+project.github
+  .tryFindWorkflow("build")
+  .file.patch(JsonPatch.remove("/jobs/build/steps/5"));
+
+project.github
+  .tryFindWorkflow("release")
+  .file.patch(JsonPatch.remove("/jobs/release/steps/6"));
+project.github
+  .tryFindWorkflow("release")
+  .file.patch(JsonPatch.remove("/jobs/release/steps/6"));
 
 project.addPackageIgnore(".gitattributes");
 project.addPackageIgnore(".prettierignore");

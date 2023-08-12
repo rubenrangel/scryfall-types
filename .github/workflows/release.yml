@@ -30,12 +30,8 @@ jobs:
           node-version: "18"
       - run: corepack enable
       - run: corepack prepare yarn@stable --activate
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
       - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
+        run: yarn install
       - name: release
         run: npx projen release
       - name: Check for new commits
