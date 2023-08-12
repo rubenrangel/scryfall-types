@@ -41,6 +41,11 @@
       "type": "build"
     },
     {
+      "name": "npm-check-updates",
+      "version": "^16",
+      "type": "build"
+    },
+    {
       "name": "prettier",
       "type": "build"
     },
@@ -59,10 +64,6 @@
     },
     {
       "name": "vitest",
-      "type": "build"
-    },
-    {
-      "name": "wrap-ansi",
       "type": "build"
     }
   ],

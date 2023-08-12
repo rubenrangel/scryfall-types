@@ -45,8 +45,7 @@ const project = new typescript.TypeScriptProject({
     },
   },
   entrypoint: "",
-  devDeps: ["vitest", "wrap-ansi"],
-  depsUpgrade: false,
+  devDeps: ["vitest"],
   workflowNodeVersion: "18",
   workflowBootstrapSteps: [
     {
@@ -66,11 +65,14 @@ const project = new typescript.TypeScriptProject({
     },
     {
       name: "Install dependencies",
-      run: "yarn install",
+      run: "yarn install --immutable",
     },
   ],
 });
 
+project.tasks.tryFind("install").reset("yarn install");
+project.tasks.tryFind("install:ci").reset("yarn install --immutable");
+
 project.github
   .tryFindWorkflow("build")
   .file.patch(JsonPatch.remove("/jobs/build/steps/5"));
@@ -84,6 +86,13 @@ project.github
 project.github
   .tryFindWorkflow("release")
   .file.patch(JsonPatch.remove("/jobs/release/steps/6"));
+
+project.github
+  .tryFindWorkflow("upgrade-main")
+  .file.patch(JsonPatch.remove("/jobs/upgrade/steps/5"));
+project.github
+  .tryFindWorkflow("upgrade-main")
+  .file.patch(JsonPatch.remove("/jobs/upgrade/steps/5"));
 
 project.addPackageIgnore(".gitattributes");
 project.addPackageIgnore(".prettierignore");
