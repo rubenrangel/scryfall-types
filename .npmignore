@@ -21,5 +21,7 @@ tsconfig.tsbuildinfo
 .gitattributes
 .prettierignore
 .prettierrc.json
+.vite.config.ts
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+coverage
