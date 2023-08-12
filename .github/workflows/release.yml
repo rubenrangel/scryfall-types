@@ -31,7 +31,7 @@ jobs:
       - run: corepack enable
       - run: corepack prepare yarn@stable --activate
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
       - name: release
         run: npx projen release
       - name: Check for new commits
