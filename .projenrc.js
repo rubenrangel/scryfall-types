@@ -65,6 +65,7 @@ const project = new typescript.TypeScriptProject({
       run: "corepack prepare yarn@stable --activate",
     },
   ],
+  buildWorkflow: false,
 });
 
 project.addPackageIgnore(".gitattributes");
