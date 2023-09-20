@@ -13,6 +13,8 @@ const project = new typescript.TypeScriptProject({
     "magic",
     "gathering",
   ],
+  majorVersion: 1,
+  prerelease: "beta-1",
   releaseToNpm: true,
   jest: false,
   prettier: true,
