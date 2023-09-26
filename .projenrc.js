@@ -14,7 +14,6 @@ const project = new typescript.TypeScriptProject({
     "gathering",
   ],
   majorVersion: 1,
-  prerelease: "beta-1",
   releaseToNpm: true,
   jest: false,
   prettier: true,
